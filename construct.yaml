@@ -13,7 +13,7 @@ channels:
   - https://repo.continuum.io/pkgs/msys2/  [win]
 
 specs:
-  - python
+  - python  # 2 or 3
   - conda
   - console_shortcut  [win]
   - menuinst  [win]
