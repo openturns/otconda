@@ -26,7 +26,7 @@ specs:
   - otfmi
   - otlm
   - otmorris
-  #- otpod
+  - otpod
   - otrobopt
   - otsvm
   - otwrapy
