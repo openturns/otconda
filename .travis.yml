@@ -13,7 +13,7 @@ matrix:
 
 install:
   - wget -c --no-check-certificate https://repo.continuum.io/miniconda/Miniconda${PY_MAJOR_VER}-latest-Linux-x86_64.sh -P /tmp
-  - bash /tmp/Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda
+  - bash /tmp/Miniconda${PY_MAJOR_VER}-latest-Linux-x86_64.sh -b -p $HOME/miniconda
   - PATH="$HOME/miniconda/bin:$PATH" conda install -y constructor
 
 script:
