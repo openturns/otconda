@@ -1,0 +1,36 @@
+name: otconda
+version: 0.0.0
+
+ignore_duplicate_files: True
+install_in_dependency_order: True
+
+channels:
+  - https://conda.anaconda.org/conda-forge/
+  - https://repo.continuum.io/pkgs/free/
+  - https://repo.continuum.io/pkgs/main/
+  - https://repo.continuum.io/pkgs/r/
+  - https://repo.continuum.io/pkgs/pro/
+  - https://repo.continuum.io/pkgs/msys2/  [win]
+
+specs:
+  - python
+  - conda
+  - console_shortcut  [win]
+  - menuinst  [win]
+  - scikit-learn
+  - pandas
+  - pytz 2017.2  # noarch...
+  - matplotlib
+  - lighttpd  [unix]
+  - otfftw
+  - otfmi
+  - otlm
+  - otmorris
+  #- otpod
+  - otrobopt
+  - otsvm
+  - otwrapy
+
+license_file: EULA.txt
+
+welcome_image: galton.png  [win]

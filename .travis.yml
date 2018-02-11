@@ -1,0 +1,34 @@
+language: cpp
+dist: trusty
+sudo: false
+
+env:
+  global:
+    - VERSION=0.0.0
+
+matrix:
+  include:
+    - env: PY_MAJOR_VER=2
+    - env: PY_MAJOR_VER=3
+
+install:
+  - wget -c --no-check-certificate https://repo.continuum.io/miniconda/Miniconda${PY_MAJOR_VER}-latest-Linux-x86_64.sh -P /tmp
+  - bash /tmp/Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda
+  - PATH="$HOME/miniconda/bin:$PATH" conda install -y constructor
+
+script:
+  - PATH="$HOME/miniconda/bin:$PATH" constructor .
+  - mv otconda-${VERSION}-Linux-x86_64.sh otconda${PY_MAJOR_VER}-${VERSION}-Linux-x86_64.sh
+  - bash otconda*.sh -b -p $HOME/otconda
+  - PATH="$HOME/otconda/bin:$PATH" python otconda_test.py
+
+deploy:
+  provider: releases
+  api_key:
+    secure: rifHFdbC62p32FbLEDtRol6DYQV/2LT37KVW5vM/8i2jc+Fyi1/QZ5P8/926B/nDsqI4lu8PyriqjXmyVrYWT16NQ14Dmft+nZSakiCJhEfCgDOnKwOw4AI6T4lo9CQLjjZew2cv+SkaKIV4RR2vJtC/59uevv8mPkGAukXDOxKGJAKtVPC/5TRYxTIPs6iwQLkXugSBdg8cTgD8oPiCRnU4bG8DQZT8dyfqAsGFT+aA5BxY6YDZSmcv/WCm0mYRfcJLmqoHgQ4uUGOa5kCbtQeXjnrFNZn/qEguHq5I8P35Q2vOLO5wZ+mK5pB5iQHRnUoqC3thPZlTjSxxvirWGwqPRHj+aA2Y8NPV+x4DpIR54ucCqsHASBO2PwFkjE2ndVLGcKFAvbuQmiIdTHiZLJK8ux/I8Afb3i6nn4IOYeTLxrrhj3Fwd/I78JPe8NozLkbn5Owh/hwxCrJ6YnImwA9SIYNXAY1ck8Pdcxqn+HX7NXUs78KOFPD4rqJGOMQCgwZsPa1Gt23rQ7h7DkEYB2ELN5IdS65H0+9hPdNg0OdplYXRd+W+V6CSjSsPNmS9xeb7niupY3JMk7RkkPChurt34zxap8I/DHjc0JUBmc5BFWANyMrKpLvF8BFN2euxFFM6e138mJNHcqmjLsI8N6F5FAhZODNja4t8PcgX9h0=
+  file: otconda${PY_MAJOR_VER}-${VERSION}-Linux-x86_64.sh
+  skip_cleanup: true
+  overwrite: true
+  on:
+    tags: true
+    repo: openturns/otconda

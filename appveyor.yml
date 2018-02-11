@@ -1,0 +1,37 @@
+environment:
+  VERSION: 0.0.0
+  matrix:
+    - PY_MAJOR_VER: 2
+      MINICONDA_SUFFIX: ""
+    - PY_MAJOR_VER: 3
+      MINICONDA_SUFFIX: 36
+
+install:
+  - set CONDA_ROOT="C:\Miniconda%MINICONDA_SUFFIX%-x64"
+  - set "PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%"
+  - conda install -y constructor
+
+build_script:
+  - constructor .
+  - move otconda-%VERSION%-Windows-x86_64.exe otconda%PY_MAJOR_VER%-%VERSION%-Windows-x86_64.exe
+  - otconda%PY_MAJOR_VER%-%VERSION%-Windows-x86_64.exe /S /D=C:\otconda
+  - set CONDA_ROOT="C:\otconda"
+  - set "PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%"
+  - python otconda_test.py
+
+artifacts:
+  - path: otconda*.exe
+    name: binary
+
+deploy:
+  release: $(APPVEYOR_REPO_TAG_NAME)
+  description: 'Windows installer'
+  provider: GitHub
+  auth_token:
+    secure: 4CkqK7ssPZsVuYY4gnYun8TlaVakivCHyw+EnT6z/KdoG3iTDcebHNdHQ+cYJFt+
+  artifact: binary
+  draft: false
+  prerelease: false
+  on:
+    branch: /v.*/
+    appveyor_repo_tag: true
