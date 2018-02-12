@@ -7,5 +7,5 @@
 otconda installer
 =================
 
-Conda bundle including OpenTURNS ands its modules
+Conda bundle including OpenTURNS and its modules
 
