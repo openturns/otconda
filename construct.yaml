@@ -25,7 +25,9 @@ specs:
   - otfftw
   - otfmi
   - otlm
+  - otmixmod
   - otmorris
+  - otpmml
   - otpod
   - otrobopt
   - otsvm
