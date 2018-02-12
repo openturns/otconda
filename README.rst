@@ -4,7 +4,7 @@
 .. image:: https://ci.appveyor.com/api/projects/status/w3ao2a3g2u1m3pv9?svg=true
     :target: https://ci.appveyor.com/project/openturns/otconda
 
-OTconda installer
+otconda installer
 =================
 
 Conda bundle including OpenTURNS ands its modules
