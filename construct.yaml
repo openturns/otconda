@@ -35,4 +35,6 @@ specs:
 
 license_file: EULA.txt
 
-welcome_image: galton.png  [win]
+welcome_image: galton_v.png
+header_image: galton_h.png
+icon_image: icon256.png
