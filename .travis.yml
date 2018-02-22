@@ -17,8 +17,8 @@ install:
   - PATH="$HOME/miniconda/bin:$PATH" conda install -y constructor
 
 script:
+  - sed "s|@PY_MAJOR_VER@|${PY_MAJOR_VER}|g" construct.yaml.in > construct.yaml
   - PATH="$HOME/miniconda/bin:$PATH" constructor .
-  - mv otconda-${VERSION}-Linux-x86_64.sh otconda${PY_MAJOR_VER}-${VERSION}-Linux-x86_64.sh
   - bash otconda*.sh -b -p $HOME/otconda
   - PATH="$HOME/otconda/bin:$PATH" python otconda_test.py
 
