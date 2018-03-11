@@ -7,7 +7,7 @@
 otconda installer
 =================
 
-Conda bundle including OpenTURNS and its modules
+Conda bundle including OpenTURNS and its `modules <http://trac.openturns.org/wiki/Modules>`_
 
 Download: https://github.com/openturns/otconda/releases
 
