@@ -33,12 +33,13 @@ def parse_modules(filename):
 def check_modules(modules):
     n_fail = 0
     for mod in modules:
+        print(mod.ljust(40))
         try:
             importlib.import_module(mod)
-            print(mod.ljust(40), 'OK')
+            print('OK')
         except ImportError as exc:
             n_fail += 1
-            print(mod.ljust(40), '***Failed')
+            print('***Failed')
             traceback.print_exc()
     return n_fail
 
