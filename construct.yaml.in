@@ -1,5 +1,5 @@
 name: otconda@PY_MAJOR_VER@
-version: 0.0.0
+version: 18.04
 
 ignore_duplicate_files: True
 install_in_dependency_order: True
@@ -21,14 +21,13 @@ specs:
   - pandas
   - pytz 2017.2  # noarch...
   - matplotlib
-  - lighttpd  [unix]
   - otfftw
   - otfmi
   - otlm
   - otmixmod
   - otmorris
   - otpmml
-  - otpod
+  #- otpod
   - otrobopt
   - otsvm
   - otwrapy
