@@ -33,7 +33,8 @@ def parse_modules(filename):
 def check_modules(modules):
     n_fail = 0
     for mod in modules:
-        print(mod.ljust(40), end='', flush=True)
+        print(mod.ljust(40), end='')
+        sys.stdout.flush()
         try:
             importlib.import_module(mod)
             print('OK')
