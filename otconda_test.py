@@ -46,6 +46,7 @@ def check_modules(modules):
 
 
 if __name__ == '__main__':
+    check_modules(['numpy', 'scipy', 'assimulo', 'pyfmi'])
     modules = parse_modules('construct.yaml')
     n_fail = check_modules(modules)
     sys.exit(n_fail)
