@@ -4,7 +4,7 @@ sudo: false
 
 env:
   global:
-    - VERSION=18.04
+    - VERSION=1.11rc1
 
 matrix:
   include:

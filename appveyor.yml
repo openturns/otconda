@@ -1,5 +1,5 @@
 environment:
-  VERSION: 18.04
+  VERSION: 1.11rc1
   matrix:
     - PY_MAJOR_VER: 2
       MINICONDA_SUFFIX: ""
