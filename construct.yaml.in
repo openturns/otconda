@@ -1,5 +1,5 @@
 name: otconda@PY_MAJOR_VER@
-version: 18.04
+version: 1.11rc1
 
 ignore_duplicate_files: True
 install_in_dependency_order: True
@@ -19,7 +19,8 @@ specs:
   - menuinst  [win]
   - scikit-learn
   - pandas
-  - pytz 2017.2  # noarch...
+  - pytz 2017.3  # noarch
+  - python-dateutil 2.6.1  # noarch
   - matplotlib
   - otfftw
   - otfmi

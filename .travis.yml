@@ -11,16 +11,8 @@ matrix:
     - env: PY_MAJOR_VER=2
     - env: PY_MAJOR_VER=3
 
-install:
-  - wget -c --no-check-certificate https://repo.continuum.io/miniconda/Miniconda${PY_MAJOR_VER}-latest-Linux-x86_64.sh -P /tmp
-  - bash /tmp/Miniconda${PY_MAJOR_VER}-latest-Linux-x86_64.sh -b -p $HOME/miniconda
-  - PATH="$HOME/miniconda/bin:$PATH" conda install -y constructor
-
 script:
-  - sed "s|@PY_MAJOR_VER@|${PY_MAJOR_VER}|g" construct.yaml.in > construct.yaml
-  - PATH="$HOME/miniconda/bin:$PATH" constructor .
-  - bash otconda*.sh -b -p $HOME/otconda
-  - PATH="$HOME/otconda/bin:$PATH" python otconda_test.py
+  - ./build_otconda.sh ${PY_MAJOR_VER}
 
 deploy:
   provider: releases
