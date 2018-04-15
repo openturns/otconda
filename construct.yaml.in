@@ -17,10 +17,11 @@ specs:
   - conda
   - console_shortcut  [win]
   - menuinst  [win]
-  - scikit-learn
-  - pandas
   - pytz 2017.3  # noarch
   - python-dateutil 2.6.1  # noarch
+  - numpy >=1.14  [win]
+  - scikit-learn
+  - pandas
   - matplotlib
   - otfftw
   - otfmi
