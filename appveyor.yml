@@ -9,6 +9,7 @@ environment:
 install:
   - set CONDA_ROOT="C:\Miniconda%MINICONDA_SUFFIX%-x64"
   - set "PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%"
+  - conda update --all
   - conda install -y constructor
   - conda install -y conda=4.3
 
