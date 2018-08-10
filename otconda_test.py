@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 from __future__ import print_function
 import re
-import importlib
 import sys
-import traceback
-
+import subprocess
 
 def parse_modules(filename):
     modules = []
@@ -34,14 +32,13 @@ def check_modules(modules):
     n_fail = 0
     for mod in modules:
         print(mod.ljust(40), end='')
-        sys.stdout.flush()
         try:
-            importlib.import_module(mod)
+            subprocess.check_output([sys.executable, '-c', 'import ' + mod], stderr=subprocess.STDOUT)
             print('OK')
-        except ImportError as exc:
+        except subprocess.CalledProcessError as exc:
             n_fail += 1
             print('***Failed')
-            traceback.print_exc()
+            print(exc.output.decode())
     return n_fail
 
 
