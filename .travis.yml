@@ -18,7 +18,7 @@ matrix:
       env: PY_MAJOR_VER=3 OS=MacOSX
 
 script:
-  - ./build_otconda.sh ${PY_MAJOR_VER} ${OS}
+  - ./build_otconda.sh ${PY_MAJOR_VER}
 
 deploy:
   provider: releases
