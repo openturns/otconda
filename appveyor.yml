@@ -8,17 +8,17 @@ environment:
 
 install:
   - set CONDA_ROOT="C:\Miniconda%MINICONDA_SUFFIX%-x64"
-  - set "PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%"
+  - set PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%
+  - set PATH=C:\msys64\usr\bin;%PATH%
   - conda install -y constructor
   - conda install -y conda=4.3
 
 build_script:
-  - set PATH=C:\msys64\usr\bin;%PATH%
   - sed "s/@PY_MAJOR_VER@/%PY_MAJOR_VER%/g" construct.yaml.in > construct.yaml
-  - constructor .
+  - constructor -v .
   - otconda%PY_MAJOR_VER%-%VERSION%-Windows-x86_64.exe /S /D=C:\otconda
   - set CONDA_ROOT="C:\otconda"
-  - set "PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%"
+  - set PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%
   - python otconda_test.py
 
 artifacts:

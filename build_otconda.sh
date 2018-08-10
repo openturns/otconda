@@ -25,11 +25,14 @@ rm -rf /tmp/miniconda
 bash /tmp/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -b -p /tmp/miniconda
 PATH="/tmp/miniconda/bin:$PATH"
 conda install -y constructor
-conda install -y conda=4.3  # pin conda to fix pyqt resolve
+
+# https://github.com/conda/constructor/issues/204
+conda install -y conda=4.3
 
 # build
+rm -f otconda${PY_MAJOR_VER}*.sh
 sed "s|@PY_MAJOR_VER@|${PY_MAJOR_VER}|g" construct.yaml.in > construct.yaml
-constructor .
+constructor -v .
 
 # test
 rm -rf /tmp/otconda
