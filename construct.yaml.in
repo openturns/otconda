@@ -1,8 +1,8 @@
 name: otconda@PY_MAJOR_VER@
 version: 1.11
 
-ignore_duplicate_files: True
-install_in_dependency_order: True
+ignore_duplicate_files: true
+install_in_dependency_order: true
 
 channels:
   - https://conda.anaconda.org/conda-forge/
@@ -31,6 +31,11 @@ specs:
   - otrobopt
   - otsvm
   - otwrapy
+
+# https://github.com/conda/constructor/issues/86
+post_install: post_win.bat  [win]
+post_install: post_osx.sh  [osx]
+post_install: post_linux.sh  [linux]
 
 license_file: EULA.txt
 
