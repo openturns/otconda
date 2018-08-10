@@ -6,16 +6,6 @@
 #
 # [i86]: https://github.com/conda/constructor/issues/86#issuecomment-330863531
 if [[ -e site-packages ]]; then
-    for DIR in site-packages/*; do
-        if [[ -d $DIR ]]; then
-            cp -r $DIR $PREFIX/lib/python?.?/site-packages
-        else
-            filename=$(basename -- "$DIR")
-            extension="${filename##*.}"
-            if [[ $extension == 'py' ]]; then
-                mv $DIR $PREFIX/lib/python?.?/site-packages
-            fi
-        fi
-    done
+    cp -r site-packages/* $PREFIX/lib/python?.?/site-packages
     rm -r site-packages
 fi
