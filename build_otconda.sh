@@ -25,6 +25,10 @@ rm -rf /tmp/miniconda
 bash /tmp/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -b -p /tmp/miniconda
 PATH="/tmp/miniconda/bin:$PATH"
 conda install -y constructor
+
+# https://github.com/conda/constructor/issues/86
+cd /tmp/miniconda/lib/python${PY_MAJOR_VER}*/site-packages/ && wget https://github.com/conda/constructor/pull/214.patch && patch -p1 -i 214.patch && cd -
+
 conda install -y conda=4.3  # pin conda to fix pyqt resolve
 
 # build
