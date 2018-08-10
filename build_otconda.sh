@@ -4,14 +4,20 @@ set -e
 
 usage()
 {
-  echo "Usage: $0 PY_MAJOR_VER OS"
+  echo "Usage: $0 PY_MAJOR_VER"
   exit 2
 }
 
-test $# = 2 || usage
+test $# = 1 || usage
 
 PY_MAJOR_VER=$1
-OS=$2
+
+if test "`uname`" = "Linux"
+then
+  OS=Linux
+else
+  OS=MacOSX
+fi
 
 # install constructor
 wget -c --no-check-certificate https://repo.continuum.io/miniconda/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -P /tmp
