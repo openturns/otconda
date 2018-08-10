@@ -8,7 +8,7 @@
 if [[ -e site-packages ]]; then
     for DIR in site-packages/*; do
         if [[ -d $DIR ]]; then
-            mv $DIR $PREFIX/lib/python?.?/site-packages
+            cp -r $DIR $PREFIX/lib/python?.?/site-packages
         else
             filename=$(basename -- "$DIR")
             extension="${filename##*.}"

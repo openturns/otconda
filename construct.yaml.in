@@ -33,9 +33,8 @@ specs:
   - otwrapy
 
 # https://github.com/conda/constructor/issues/86
-post_install: post_win.bat  [win]
-post_install: post_osx.sh  [osx]
-post_install: post_linux.sh  [linux]
+post_install: post_install.sh  [unix]
+post_install: post_install.bat  [win]
 
 license_file: EULA.txt
 
