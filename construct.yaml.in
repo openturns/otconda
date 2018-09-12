@@ -27,7 +27,7 @@ specs:
   - otmixmod
   - otmorris
   - otpmml
-  #- otpod
+  - otpod
   - otrobopt
   - otsvm
   - otwrapy
