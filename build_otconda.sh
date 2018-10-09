@@ -26,9 +26,6 @@ bash /tmp/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -b -p /tmp/miniconda
 PATH="/tmp/miniconda/bin:$PATH"
 conda install -y constructor
 
-# openturns is not yet available on py37
-conda install -y "python<3.7"
-
 # https://github.com/conda/constructor/issues/204
 conda install -y conda=4.3
 
