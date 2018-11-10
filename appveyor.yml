@@ -1,5 +1,5 @@
 environment:
-  VERSION: 1.12rc1
+  VERSION: 1.12
   matrix:
     - PY_MAJOR_VER: 2
       MINICONDA_SUFFIX: ""
