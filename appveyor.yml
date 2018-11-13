@@ -4,7 +4,7 @@ environment:
     - PY_MAJOR_VER: 2
       MINICONDA_SUFFIX: ""
     - PY_MAJOR_VER: 3
-      MINICONDA_SUFFIX: 36
+      MINICONDA_SUFFIX: 3
 
 install:
   - set CONDA_ROOT="C:\Miniconda%MINICONDA_SUFFIX%-x64"
@@ -14,7 +14,7 @@ install:
   - conda install -y constructor
 
   # https://github.com/conda/constructor/issues/204
-  - conda install -y conda=4.3
+  #- conda install -y conda=4.3
 
 build_script:
   - sed "s/@PY_MAJOR_VER@/%PY_MAJOR_VER%/g" construct.yaml.in > construct.yaml

@@ -22,7 +22,7 @@ specs:
   - pandas
   - matplotlib
   - otfftw
-  - otfmi
+    #- otfmi
   - otlm
   - otmixmod
   - otmorris

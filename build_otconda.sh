@@ -27,7 +27,7 @@ PATH="/tmp/miniconda/bin:$PATH"
 conda install -y constructor
 
 # https://github.com/conda/constructor/issues/204
-conda install -y conda=4.3
+#conda install -y conda=4.3
 
 # build
 rm -f otconda${PY_MAJOR_VER}*.sh
