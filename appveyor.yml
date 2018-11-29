@@ -10,6 +10,7 @@ install:
   - set CONDA_ROOT="C:\miniconda64"
   - set PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%
   - set PATH=C:\msys64\usr\bin;%PATH%
+  - python -c "import sys; print(sys.version, sys.executable)"
   - conda install -y constructor
 
   # https://github.com/conda/constructor/issues/204
