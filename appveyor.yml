@@ -11,8 +11,11 @@ install:
   - set PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%
   - set PATH=C:\msys64\usr\bin;%PATH%
   - python -c "import sys; print(sys.version, sys.executable)"
-  - conda config --add channels conda-forge 
+  - conda config --add channels conda-forge
   - conda install -y constructor
+
+  # https://github.com/ContinuumIO/anaconda-issues/issues/10549
+  - conda install -y xz zstd
 
 build_script:
   - sed "s/@PY_MAJOR_VER@/%PY_MAJOR_VER%/g" construct.yaml.in > construct.yaml
