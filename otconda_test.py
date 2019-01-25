@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 from __future__ import print_function
 import re
 import sys
@@ -33,8 +34,8 @@ def check_modules(modules):
     for mod in modules:
         print(mod.ljust(40), end='')
         try:
-            subprocess.check_output([sys.executable, '-c', 'import ' + mod], stderr=subprocess.STDOUT)
-            print('OK')
+            version = subprocess.check_output([sys.executable, '-c', 'import ' + mod +'; import sys; sys.stdout.write('+mod+'.__version__)'], stderr=subprocess.STDOUT)
+            print(version.decode())
         except subprocess.CalledProcessError as exc:
             n_fail += 1
             print('***Failed')
