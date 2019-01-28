@@ -10,14 +10,10 @@ install:
   - set CONDA_ROOT="C:\miniconda64"
   - set PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%
   - set PATH=C:\msys64\usr\bin;%PATH%
-  - python -c "import sys; print(sys.version, sys.executable)"
-  #- conda config --add channels conda-forge
   - conda install -y constructor
 
   # https://github.com/ContinuumIO/anaconda-issues/issues/10549
   - conda install -y xz zstd
-
-  # else fails on py3.7 ???
   - xcopy /s %CONDA_ROOT%\Library\bin\tiff.dll %CONDA_ROOT%\Lib\site-packages\PIL
   - xcopy /s %CONDA_ROOT%\Library\bin\zlib.dll %CONDA_ROOT%\Lib\site-packages\PIL
   - xcopy /s %CONDA_ROOT%\Library\bin\liblzma.dll %CONDA_ROOT%\Lib\site-packages\PIL
