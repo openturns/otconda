@@ -12,6 +12,7 @@ install:
   - set PATH=C:\msys64\usr\bin;%PATH%
   - conda install -y constructor
 
+  # looks like the AppVeyor image provides incompatible tiff dlls
   - xcopy /s %CONDA_ROOT%\Library\bin\tiff.dll %CONDA_ROOT%\Lib\site-packages\PIL
   - xcopy /s %CONDA_ROOT%\Library\bin\zlib.dll %CONDA_ROOT%\Lib\site-packages\PIL
   - xcopy /s %CONDA_ROOT%\Library\bin\liblzma.dll %CONDA_ROOT%\Lib\site-packages\PIL
