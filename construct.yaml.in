@@ -18,8 +18,6 @@ specs:
   - console_shortcut  [win]
   - menuinst  [win]
   - numpy >=1.14  [win]
-  # https://github.com/ContinuumIO/anaconda-issues/issues/10548
-  - scipy <1.2.0  [win]
   - scikit-learn
   - pandas
   - matplotlib
