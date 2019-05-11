@@ -1,5 +1,5 @@
 environment:
-  VERSION: 1.12
+  VERSION: 1.13rc1
   matrix:
     - PY_MAJOR_VER: 2
     - PY_MAJOR_VER: 3
