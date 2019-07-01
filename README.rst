@@ -11,4 +11,4 @@ Conda bundle including OpenTURNS and its `modules <http://trac.openturns.org/wik
 
 Download: https://github.com/openturns/otconda/releases
 
-Instructions: https://conda.io/docs/user-guide/install/index.html
+Instructions: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
