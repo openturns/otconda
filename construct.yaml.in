@@ -32,12 +32,7 @@ specs:
   - otsvm
   - otwrapy
 
-# https://github.com/conda/constructor/issues/86
-post_install: post_install.sh  [unix]
-post_install: post_install.bat  [win]
-
 license_file: EULA.txt
-
 welcome_image: galton_v.png
 header_image: galton_h.png
 icon_image: icon256.png

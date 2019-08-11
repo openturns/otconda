@@ -24,7 +24,7 @@ wget -c --no-check-certificate https://repo.continuum.io/miniconda/Miniconda${PY
 rm -rf /tmp/miniconda
 bash /tmp/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -b -p /tmp/miniconda
 PATH="/tmp/miniconda/bin:$PATH"
-conda install -y constructor "conda<4.7"
+conda install -y constructor
 
 # build
 rm -f otconda${PY_MAJOR_VER}*.sh

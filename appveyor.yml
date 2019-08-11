@@ -8,22 +8,15 @@ install:
   - curl -fSsLO https://repo.anaconda.com/miniconda/Miniconda%PY_MAJOR_VER%-latest-Windows-x86_64.exe
   - Miniconda%PY_MAJOR_VER%-latest-Windows-x86_64.exe /InstallationType=JustMe /S /D=C:\miniconda64
   - set CONDA_ROOT="C:\miniconda64"
-  - set PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%
-  - set PATH=C:\msys64\usr\bin;%PATH%
-  - conda install -y constructor "conda<4.7"
-
-  # looks like the AppVeyor image provides incompatible tiff dlls
-  - xcopy /s %CONDA_ROOT%\Library\bin\tiff.dll %CONDA_ROOT%\Lib\site-packages\PIL
-  - xcopy /s %CONDA_ROOT%\Library\bin\zlib.dll %CONDA_ROOT%\Lib\site-packages\PIL
-  - xcopy /s %CONDA_ROOT%\Library\bin\liblzma.dll %CONDA_ROOT%\Lib\site-packages\PIL
-  - xcopy /s %CONDA_ROOT%\Library\bin\libzstd.dll %CONDA_ROOT%\Lib\site-packages\PIL
+  - CALL %CONDA_ROOT%\Scripts\activate.bat
+  - conda install -y constructor
 
 build_script:
   - sed "s/@PY_MAJOR_VER@/%PY_MAJOR_VER%/g" construct.yaml.in > construct.yaml
   - constructor -v .
   - otconda%PY_MAJOR_VER%-%VERSION%-Windows-x86_64.exe /S /D=C:\otconda
   - set CONDA_ROOT="C:\otconda"
-  - set PATH=%CONDA_ROOT%;%CONDA_ROOT%\Scripts;%CONDA_ROOT%\Library\bin;%PATH%
+  - CALL %CONDA_ROOT%\Scripts\activate.bat
   - python otconda_test.py
 
 artifacts:
