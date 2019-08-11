@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+import os
 import re
 import sys
 import subprocess
@@ -44,6 +45,6 @@ def check_modules(modules):
 
 
 if __name__ == '__main__':
-    modules = parse_modules('construct.yaml')
+    modules = parse_modules(os.path.join('otconda', 'construct.yaml'))
     n_fail = check_modules(modules)
     sys.exit(n_fail)

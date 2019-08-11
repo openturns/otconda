@@ -28,8 +28,8 @@ conda install -y constructor
 
 # build
 rm -f otconda${PY_MAJOR_VER}*.sh
-sed "s|@PY_MAJOR_VER@|${PY_MAJOR_VER}|g" construct.yaml.in > construct.yaml
-constructor -v .
+sed "s|@PY_MAJOR_VER@|${PY_MAJOR_VER}|g" otconda/construct.yaml.in > otconda/construct.yaml
+constructor -v otconda
 
 # test
 rm -rf /tmp/otconda
