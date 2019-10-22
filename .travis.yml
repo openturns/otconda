@@ -8,16 +8,16 @@ env:
 matrix:
   include:
     - os: linux
-      env: PY_MAJOR_VER=2 OS=Linux
+      env: PY_MAJOR_VER=2 PY_MINOR_VER=7 OS=Linux
     - os: linux
-      env: PY_MAJOR_VER=3 OS=Linux
+      env: PY_MAJOR_VER=3 PY_MINOR_VER=7 OS=Linux
     - os: osx
-      env: PY_MAJOR_VER=2 OS=MacOSX
+      env: PY_MAJOR_VER=2 PY_MINOR_VER=7 OS=MacOSX
     - os: osx
-      env: PY_MAJOR_VER=3 OS=MacOSX
+      env: PY_MAJOR_VER=3 PY_MINOR_VER=7 OS=MacOSX
 
 script:
-  - ./build_otconda.sh ${PY_MAJOR_VER}
+  - ./build_otconda.sh ${PY_MAJOR_VER} ${PY_MINOR_VER}
 
 deploy:
   provider: releases

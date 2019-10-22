@@ -4,13 +4,14 @@ set -e
 
 usage()
 {
-  echo "Usage: $0 PY_MAJOR_VER"
+  echo "Usage: $0 PY_MAJOR_VER PY_MINOR_VER"
   exit 2
 }
 
-test $# = 1 || usage
+test $# = 2 || usage
 
 PY_MAJOR_VER=$1
+PY_MINOR_VER=$2
 
 if test "`uname`" = "Linux"
 then
@@ -28,7 +29,7 @@ conda install -y constructor
 
 # build
 rm -f otconda${PY_MAJOR_VER}*.sh
-sed "s|@PY_MAJOR_VER@|${PY_MAJOR_VER}|g" otconda/construct.yaml.in > otconda/construct.yaml
+sed -e "s|@PY_MAJOR_VER@|${PY_MAJOR_VER}|g" -e "s|@PY_MINOR_VER@|${PY_MINOR_VER}|g" otconda/construct.yaml.in > otconda/construct.yaml
 constructor -v otconda
 
 # test
