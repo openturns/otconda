@@ -5,6 +5,8 @@ import os
 import re
 import sys
 import subprocess
+import platform
+
 
 def parse_modules(filename):
     modules = []
@@ -29,7 +31,6 @@ def parse_modules(filename):
     return modules
 
 
-
 def check_modules(modules):
     n_fail = 0
     for mod in modules:
@@ -45,6 +46,7 @@ def check_modules(modules):
 
 
 if __name__ == '__main__':
+    print('python'.ljust(40) + platform.python_version())
     modules = parse_modules(os.path.join('otconda', 'construct.yaml'))
     n_fail = check_modules(modules)
     sys.exit(n_fail)
