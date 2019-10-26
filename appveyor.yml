@@ -1,7 +1,6 @@
 environment:
   VERSION: 1.13
   matrix:
-    - PY_MAJOR_VER: 2
     - PY_MAJOR_VER: 3
 
 install:

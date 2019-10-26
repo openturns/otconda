@@ -17,9 +17,6 @@ specs:
   - conda
   - console_shortcut  [win]
   - menuinst  [win]
-  - scikit-learn
-  - pandas
-  - matplotlib
 
 license_file: EULA.txt
 welcome_image: galton_v.png
