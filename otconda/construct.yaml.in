@@ -17,20 +17,9 @@ specs:
   - conda
   - console_shortcut  [win]
   - menuinst  [win]
-  - numpy >=1.14  [win]
   - scikit-learn
   - pandas
   - matplotlib
-  - otfftw
-  - otfmi
-  - otmixmod
-  - otmorris
-  - otpmml
-  - otpod
-  - otrobopt
-  - otsubsetinverse
-  - otsvm
-  - otwrapy
 
 license_file: EULA.txt
 welcome_image: galton_v.png
