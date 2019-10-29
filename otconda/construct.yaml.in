@@ -21,6 +21,7 @@ specs:
   - scikit-learn
   - pandas
   - matplotlib
+  - openturns >=1.14*
   - otfftw
   - otfmi
   - otmixmod
