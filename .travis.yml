@@ -3,7 +3,7 @@ sudo: false
 
 env:
   global:
-    - VERSION=1.13
+    - VERSION=1.14rc1
 
 matrix:
   include:
