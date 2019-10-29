@@ -36,4 +36,4 @@ constructor -v otconda
 rm -rf /tmp/otconda
 bash otconda${PY_MAJOR_VER}*.sh -b -p /tmp/otconda
 PATH="/tmp/otconda/bin:$PATH"
-python otconda_test.py
+python test_bundle.py

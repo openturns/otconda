@@ -17,7 +17,7 @@ build_script:
   - otconda%PY_MAJOR_VER%-%VERSION%-Windows-x86_64.exe /S /D=C:\otconda
   - set CONDA_ROOT="C:\otconda"
   - CALL %CONDA_ROOT%\Scripts\activate.bat
-  - python otconda_test.py
+  - python test_bundle.py
 
 artifacts:
   - path: otconda*.exe
