@@ -8,8 +8,6 @@ channels:
   - https://conda.anaconda.org/conda-forge/
   - https://repo.continuum.io/pkgs/free/
   - https://repo.continuum.io/pkgs/main/
-  - https://repo.continuum.io/pkgs/r/
-  - https://repo.continuum.io/pkgs/pro/
   - https://repo.continuum.io/pkgs/msys2/  [win]
 
 specs:
@@ -17,7 +15,6 @@ specs:
   - conda
   - console_shortcut  [win]
   - menuinst  [win]
-  - numpy >=1.14  [win]
   - scikit-learn
   - pandas
   - seaborn
