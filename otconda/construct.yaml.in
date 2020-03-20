@@ -1,5 +1,5 @@
 name: otconda@PY_MAJOR_VER@
-version: 1.14
+version: 1.14.1
 
 ignore_duplicate_files: true
 install_in_dependency_order: true
@@ -20,7 +20,9 @@ specs:
   - numpy >=1.14  [win]
   - scikit-learn
   - pandas
-  - matplotlib
+  - seaborn
+  - ipython
+  - jupyter
   - openturns >=1.14*
   - otfftw
   - otfmi

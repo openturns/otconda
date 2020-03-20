@@ -15,7 +15,7 @@ def parse_modules(filename):
         end = False
         for line in construct.readlines():
             if start:
-                m = re.search('^  - ([\w]+)$', line)
+                m = re.search('^  - ([\w\-]+)', line)
                 if m is not None:
                     modules.append(m.group(1))
                 else:
@@ -33,10 +33,15 @@ def parse_modules(filename):
 
 def check_modules(modules):
     n_fail = 0
+    package_import_map = {'ipython': 'IPython', 'jupyter': 'notebook', 'scikit-learn': 'sklearn'}
+    excludes = ['python', 'console_shortcut', 'menuinst']
     for mod in modules:
+        if mod in excludes:
+            continue
         print(mod.ljust(40), end='')
         try:
-            version = subprocess.check_output([sys.executable, '-c', 'import ' + mod +'; import sys; sys.stdout.write('+mod+'.__version__)'], stderr=subprocess.STDOUT)
+            imp = package_import_map.get(mod, mod)
+            version = subprocess.check_output([sys.executable, '-c', 'import ' + imp +'; import sys; sys.stdout.write(' + imp + '.__version__)'], stderr=subprocess.STDOUT)
             print(version.decode())
         except subprocess.CalledProcessError as exc:
             n_fail += 1
