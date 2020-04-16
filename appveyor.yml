@@ -1,5 +1,5 @@
 environment:
-  VERSION: 1.14.1
+  VERSION: 1.15rc1
   matrix:
     - PY_MAJOR_VER: 3
       PY_MINOR_VER: 7

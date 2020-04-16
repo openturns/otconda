@@ -1,5 +1,5 @@
 name: otconda@PY_MAJOR_VER@
-version: 1.14.1
+version: 1.15rc1
 
 ignore_duplicate_files: true
 install_in_dependency_order: true
@@ -20,7 +20,7 @@ specs:
   - seaborn
   - ipython
   - jupyter
-  - openturns >=1.14*
+  - openturns >=1.15*
   - otfftw
   - otfmi
   - otmixmod
