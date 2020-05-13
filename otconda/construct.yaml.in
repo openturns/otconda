@@ -21,6 +21,7 @@ specs:
   - ipython
   - jupyter
   - openturns >=1.15*
+  - otagrum
   - otfftw
   - otfmi
   - otmixmod
