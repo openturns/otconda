@@ -1,5 +1,5 @@
 name: otconda@PY_MAJOR_VER@
-version: 1.15rc1
+version: 1.15
 
 ignore_duplicate_files: true
 install_in_dependency_order: true
