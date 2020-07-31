@@ -25,6 +25,9 @@ wget -qc --no-check-certificate https://repo.continuum.io/miniconda/Miniconda${P
 rm -rf /tmp/miniconda
 bash /tmp/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -b -p /tmp/miniconda
 PATH="/tmp/miniconda/bin:$PATH"
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda update -y conda
 conda install -y constructor
 
 # https://github.com/conda/constructor/pull/342

@@ -9,6 +9,8 @@ install:
   - Miniconda%PY_MAJOR_VER%-latest-Windows-x86_64.exe /InstallationType=JustMe /S /D=C:\miniconda64
   - set CONDA_ROOT="C:\miniconda64"
   - CALL %CONDA_ROOT%\Scripts\activate.bat
+  - conda config --add channels conda-forge
+  - conda update -y conda
   - conda install -y constructor
 
 build_script:
