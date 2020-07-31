@@ -5,10 +5,8 @@ environment:
       PY_MINOR_VER: 8
 
 install:
-  #- curl -fSsLO https://repo.anaconda.com/miniconda/Miniconda%PY_MAJOR_VER%-latest-Windows-x86_64.exe
-  - curl -fSsLO https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Windows-x86_64.exe
-  #- Miniconda%PY_MAJOR_VER%-latest-Windows-x86_64.exe /InstallationType=JustMe /S /D=C:\miniconda64
-  - Miniconda3-py37_4.8.3-Windows-x86_64.exe /InstallationType=JustMe /S /D=C:\miniconda64
+  - curl -fSsLO https://repo.anaconda.com/miniconda/Miniconda%PY_MAJOR_VER%-latest-Windows-x86_64.exe
+  - Miniconda%PY_MAJOR_VER%-latest-Windows-x86_64.exe /InstallationType=JustMe /S /D=C:\miniconda64
   - set CONDA_ROOT="C:\miniconda64"
   - CALL %CONDA_ROOT%\Scripts\activate.bat
   - conda install -y constructor

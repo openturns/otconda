@@ -21,13 +21,17 @@ else
 fi
 
 # install constructor
-#wget -qc --no-check-certificate https://repo.continuum.io/miniconda/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -P /tmp
-wget -qc --no-check-certificate https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-${OS}-x86_64.sh -P /tmp
+wget -qc --no-check-certificate https://repo.continuum.io/miniconda/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -P /tmp
 rm -rf /tmp/miniconda
-#bash /tmp/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -b -p /tmp/miniconda
-bash /tmp/Miniconda3-py37_4.8.3-${OS}-x86_64.sh -b -p /tmp/miniconda
+bash /tmp/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -b -p /tmp/miniconda
 PATH="/tmp/miniconda/bin:$PATH"
 conda install -y constructor
+
+# https://github.com/conda/constructor/pull/342
+if test "`uname`" = "Linux"
+then
+  sed -i "s|out\['extra'\] = platform.dist()|pass|g" /tmp/miniconda/lib/python3.8/site-packages/constructor/preconda.py
+fi
 
 # build
 rm -f otconda${PY_MAJOR_VER}*.sh
