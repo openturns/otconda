@@ -2,7 +2,6 @@ name: otconda@PY_MAJOR_VER@
 version: 1.15.0.1
 
 ignore_duplicate_files: true
-install_in_dependency_order: true
 
 channels:
   - https://conda.anaconda.org/conda-forge/

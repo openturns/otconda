@@ -30,12 +30,6 @@ conda config --set channel_priority strict
 conda update -y conda
 conda install -y constructor
 
-# https://github.com/conda/constructor/pull/342
-if test "`uname`" = "Linux"
-then
-  sed -i "s|out\['extra'\] = platform.dist()|pass|g" /tmp/miniconda/lib/python3.8/site-packages/constructor/preconda.py
-fi
-
 # build
 rm -f otconda${PY_MAJOR_VER}*.sh
 sed -e "s|@PY_MAJOR_VER@|${PY_MAJOR_VER}|g" -e "s|@PY_MINOR_VER@|${PY_MINOR_VER}|g" otconda/construct.yaml.in > otconda/construct.yaml
