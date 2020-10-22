@@ -1,5 +1,5 @@
 environment:
-  VERSION: 1.15.0.1
+  VERSION: 1.16rc1
   matrix:
     - PY_MAJOR_VER: 3
       PY_MINOR_VER: 8
@@ -11,7 +11,7 @@ install:
   - CALL %CONDA_ROOT%\Scripts\activate.bat
   - conda config --add channels conda-forge
   - conda update -y conda
-  - conda install -y constructor
+  - conda install -y constructor nsis=3.01
 
 build_script:
   - sed -e "s/@PY_MAJOR_VER@/%PY_MAJOR_VER%/g" -e "s/@PY_MINOR_VER@/%PY_MINOR_VER%/g" otconda\construct.yaml.in > otconda\construct.yaml
