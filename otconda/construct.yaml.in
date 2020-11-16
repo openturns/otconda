@@ -1,5 +1,5 @@
 name: otconda@PY_MAJOR_VER@
-version: 1.16rc1
+version: 1.16
 
 ignore_duplicate_files: true
 
@@ -14,6 +14,7 @@ specs:
   - conda
   - console_shortcut  [win]
   - menuinst  [win]
+  - scipy <1.5.2  [win]
   - scikit-learn
   - pandas
   - seaborn
