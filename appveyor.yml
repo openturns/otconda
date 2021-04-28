@@ -1,16 +1,14 @@
 environment:
-  VERSION: 1.16
+  VERSION: 1.17rc1
   matrix:
     - PY_MAJOR_VER: 3
       PY_MINOR_VER: 8
 
 install:
-  - curl -fSsLO https://repo.anaconda.com/miniconda/Miniconda%PY_MAJOR_VER%-latest-Windows-x86_64.exe
-  - Miniconda%PY_MAJOR_VER%-latest-Windows-x86_64.exe /InstallationType=JustMe /S /D=C:\miniconda64
-  - set CONDA_ROOT="C:\miniconda64"
-  - CALL %CONDA_ROOT%\Scripts\activate.bat
-  - conda config --add channels conda-forge
-  - conda update -y conda
+  - curl -fSsLO https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe
+  - set CONDA_ROOT="%UserProfile%\Miniforge3"
+  - Miniforge3-Windows-x86_64.exe /InstallationType=JustMe /S /D=%CONDA_ROOT%
+  - call %CONDA_ROOT%\Scripts\activate.bat
   - conda install -y constructor
 
 build_script:

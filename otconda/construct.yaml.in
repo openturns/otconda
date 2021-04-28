@@ -1,5 +1,5 @@
 name: otconda@PY_MAJOR_VER@
-version: 1.16
+version: 1.17rc1
 
 ignore_duplicate_files: true
 
@@ -20,7 +20,7 @@ specs:
   - seaborn
   - ipython
   - jupyter
-  - openturns >=1.16*
+  - openturns >=1.17*
   - otagrum
   - otfftw
   - otfmi

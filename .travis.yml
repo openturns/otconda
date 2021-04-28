@@ -1,9 +1,8 @@
 language: generic
-sudo: false
 
 env:
   global:
-    - VERSION=1.16
+    - VERSION=1.17rc1
 
 matrix:
   include:

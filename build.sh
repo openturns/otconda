@@ -21,13 +21,10 @@ else
 fi
 
 # install constructor
-wget -qc --no-check-certificate https://repo.continuum.io/miniconda/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -P /tmp
-rm -rf /tmp/miniconda
-bash /tmp/Miniconda${PY_MAJOR_VER}-latest-${OS}-x86_64.sh -b -p /tmp/miniconda
-PATH="/tmp/miniconda/bin:$PATH"
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-conda update -y conda
+wget -c --no-check-certificate https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-${OS}-x86_64.sh -P /tmp
+rm -rf /tmp/miniforge
+bash /tmp/Miniforge3-${OS}-x86_64.sh -b -p /tmp/miniforge
+export PATH="/tmp/miniforge/bin:$PATH"
 conda install -y constructor
 
 # build
