@@ -2,7 +2,7 @@ language: generic
 
 env:
   global:
-    - VERSION=1.17rc1
+    - VERSION=1.17
 
 matrix:
   include:

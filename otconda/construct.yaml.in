@@ -1,5 +1,5 @@
 name: otconda@PY_MAJOR_VER@
-version: 1.17rc1
+version: 1.17
 
 ignore_duplicate_files: true
 
