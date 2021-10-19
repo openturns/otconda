@@ -1,0 +1,59 @@
+name: Release
+
+on: push
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [1.18rc1]
+        pyminor: [9]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: ./build.sh ${{ matrix.pyminor }}
+      - name: Upload
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: otconda3-${{ matrix.version }}-Linux-x86_64.sh
+
+  macos:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        version: [1.18rc1]
+        pyminor: [9]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: ./build.sh ${{ matrix.pyminor }}
+      - name: Upload
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: otconda3-${{ matrix.version }}-MacOSX-x86_64.sh
+
+  windows:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        version: [1.18rc1]
+        pyminor: [9]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          miniforge-version: latest
+      - name: Build
+        run: |
+          conda install -y constructor
+          sed "s/@PY_MINOR_VER@/${{ matrix.pyminor }}/g" otconda\construct.yaml.in > otconda\construct.yaml
+          file otconda\construct.yaml
+          constructor -v otconda
+      - name: Upload
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: otconda3-${{ matrix.version }}-Windows-x86_64.sh

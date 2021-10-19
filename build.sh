@@ -4,14 +4,13 @@ set -e
 
 usage()
 {
-  echo "Usage: $0 PY_MAJOR_VER PY_MINOR_VER"
+  echo "Usage: $0 PY_MINOR_VER"
   exit 2
 }
 
-test $# = 2 || usage
+test $# = 1 || usage
 
-PY_MAJOR_VER=$1
-PY_MINOR_VER=$2
+PY_MINOR_VER=$1
 
 if test "`uname`" = "Linux"
 then
@@ -28,12 +27,12 @@ export PATH="/tmp/miniforge/bin:$PATH"
 conda install -y constructor
 
 # build
-rm -f otconda${PY_MAJOR_VER}*.sh
-sed -e "s|@PY_MAJOR_VER@|${PY_MAJOR_VER}|g" -e "s|@PY_MINOR_VER@|${PY_MINOR_VER}|g" otconda/construct.yaml.in > otconda/construct.yaml
+rm -f otconda3*.sh
+sed "s|@PY_MINOR_VER@|${PY_MINOR_VER}|g" otconda/construct.yaml.in > otconda/construct.yaml
 constructor -v otconda
 
 # test
 rm -rf /tmp/otconda
-bash otconda${PY_MAJOR_VER}*.sh -b -p /tmp/otconda
+bash otconda3*.sh -b -p /tmp/otconda
 PATH="/tmp/otconda/bin:$PATH"
 python test_bundle.py

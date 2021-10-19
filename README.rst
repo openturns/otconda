@@ -1,8 +1,5 @@
-.. image:: https://travis-ci.org/openturns/otconda.svg
-    :target: https://travis-ci.org/openturns/otconda
-
-.. image:: https://ci.appveyor.com/api/projects/status/3qx1wfqgcvh73p9h?svg=true
-    :target: https://ci.appveyor.com/project/openturns/otconda
+.. image:: https://github.com/openturns/otconda/actions/workflows/build.yml/badge.svg?branch=master
+    :target: https://github.com/openturns/otconda/actions/workflows/build.yml
 
 otconda installer
 =================
