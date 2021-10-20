@@ -4,13 +4,11 @@ set -e
 
 usage()
 {
-  echo "Usage: $0 PY_MINOR_VER"
+  echo "Usage: $0"
   exit 2
 }
 
-test $# = 1 || usage
-
-PY_MINOR_VER=$1
+test $# = 0 || usage
 
 if test "`uname`" = "Linux"
 then
@@ -28,7 +26,6 @@ conda install -y constructor
 
 # build
 rm -f otconda*.sh
-sed "s|@PY_MINOR_VER@|${PY_MINOR_VER}|g" otconda/construct.yaml.in > otconda/construct.yaml
 constructor -v otconda
 
 # test
