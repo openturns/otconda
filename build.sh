@@ -27,12 +27,12 @@ export PATH="/tmp/miniforge/bin:$PATH"
 conda install -y constructor
 
 # build
-rm -f otconda3*.sh
+rm -f otconda*.sh
 sed "s|@PY_MINOR_VER@|${PY_MINOR_VER}|g" otconda/construct.yaml.in > otconda/construct.yaml
 constructor -v otconda
 
 # test
 rm -rf /tmp/otconda
-bash otconda3*.sh -b -p /tmp/otconda
+bash otconda*.sh -b -p /tmp/otconda
 PATH="/tmp/otconda/bin:$PATH"
 python test_bundle.py

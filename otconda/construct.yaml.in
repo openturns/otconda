@@ -1,4 +1,4 @@
-name: otconda3
+name: otconda
 version: 1.18rc1
 
 ignore_duplicate_files: true
@@ -10,7 +10,7 @@ channels:
   - https://repo.continuum.io/pkgs/msys2/  [win]
 
 specs:
-  - python 3.@PY_MINOR_VER@.*
+  - python 3.@PY_MINOR_VER@
   - conda
   - console_shortcut  [win]
   - menuinst  [win]
@@ -19,7 +19,7 @@ specs:
   - seaborn
   - ipython
   - jupyter
-  - openturns >=1.18*
+  - openturns 1.18*
   - otagrum
   - otfftw
   - otfmi
