@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [1.18rc1]
+        version: [1.18]
     steps:
       - uses: actions/checkout@v2
       - name: Build
@@ -22,8 +22,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        version: [1.18rc1]
-        pyminor: [9]
+        version: [1.18]
     steps:
       - uses: actions/checkout@v2
       - name: Build
@@ -38,7 +37,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        version: [1.18rc1]
+        version: [1.18]
     steps:
       - uses: actions/checkout@v2
       - uses: conda-incubator/setup-miniconda@v2
