@@ -1,5 +1,5 @@
 name: otconda
-version: 1.18
+version: 1.19rc1
 
 ignore_duplicate_files: true
 
@@ -18,8 +18,8 @@ specs:
   - pandas
   - seaborn
   - ipython
-  - jupyter
-  - openturns 1.18*
+  #- jupyter
+  - openturns 1.19*
   - otagrum
   - otfftw
   - otfmi
