@@ -1,5 +1,5 @@
 name: otconda
-version: 1.19rc1
+version: 1.19
 
 ignore_duplicate_files: true
 
