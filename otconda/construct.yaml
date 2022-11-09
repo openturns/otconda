@@ -1,5 +1,5 @@
 name: otconda
-version: 1.20
+version: '1.20'
 
 ignore_duplicate_files: true
 
