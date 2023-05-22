@@ -33,8 +33,8 @@ def parse_modules(filename):
 
 def check_modules(modules):
     n_fail = 0
-    package_import_map = {'ipython': 'IPython', 'jupyter': 'notebook', 'scikit-learn': 'sklearn'}
-    excludes = ['python', 'console_shortcut', 'menuinst']
+    package_import_map = {'ipython': 'IPython', 'scikit-learn': 'sklearn'}
+    excludes = ['python', 'miniforge_console_shortcut']
     for mod in modules:
         if mod in excludes:
             continue

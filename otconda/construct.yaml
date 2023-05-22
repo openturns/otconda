@@ -1,31 +1,25 @@
 name: otconda
-version: '1.20'
+version: '1.21rc1'
+
+channels:
+  - conda-forge
 
 ignore_duplicate_files: true
 
-channels:
-  - https://conda.anaconda.org/conda-forge/
-  - https://repo.continuum.io/pkgs/free/
-  - https://repo.continuum.io/pkgs/main/
-  - https://repo.continuum.io/pkgs/msys2/  [win]
-
 specs:
-  - python 3.9.*
+  - python 3.10.*
   - conda
-  - console_shortcut  [win]
-  - menuinst  [win]
+  - miniforge_console_shortcut  [win]
   - scikit-learn
   - pandas
   - seaborn
   - ipython
-  #- jupyter
-  - openturns 1.20*
+  - openturns 1.21*
   - otagrum
   - otfftw
   - otfmi
   - otmixmod
   - otmorris
-  - otpmml
   - otpod
   - otrobopt
   - otsubsetinverse
