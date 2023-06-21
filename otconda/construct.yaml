@@ -1,5 +1,5 @@
 name: otconda
-version: '1.21rc1'
+version: '1.21'
 
 channels:
   - conda-forge
