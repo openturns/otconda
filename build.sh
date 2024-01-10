@@ -22,8 +22,6 @@ wget -c --no-check-certificate https://github.com/conda-forge/miniforge/releases
 rm -rf /tmp/miniforge
 bash /tmp/Miniforge3-${OS}-x86_64.sh -b -p /tmp/miniforge
 export PATH="/tmp/miniforge/bin:$PATH"
-# https://github.com/conda/constructor/issues/628
-conda install -y "conda<23.1"
 conda install -y constructor
 
 # build
