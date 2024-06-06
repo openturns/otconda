@@ -1,5 +1,5 @@
 name: otconda
-version: '1.22'
+version: '1.23'
 
 channels:
   - conda-forge
@@ -15,7 +15,7 @@ specs:
   - seaborn
   - ipython
   - jupyter
-  - openturns 1.22*
+  - openturns 1.23*
   - otagrum
   - otfftw
   - otfmi
