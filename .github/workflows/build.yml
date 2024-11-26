@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ['1.23']
+        version: ['1.24']
     steps:
       - uses: actions/checkout@v4
       - name: Build
@@ -22,7 +22,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        version: ['1.23']
+        version: ['1.24']
     steps:
       - uses: actions/checkout@v4
       - name: Build
@@ -37,12 +37,13 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        version: ['1.23']
+        version: ['1.24']
     steps:
       - uses: actions/checkout@v4
-      - uses: conda-incubator/setup-miniconda@v2
+      - uses: conda-incubator/setup-miniconda@v3
         with:
           miniforge-version: latest
+          conda-remove-defaults: "true"
       - name: Build
         run: |
           conda install -y constructor
