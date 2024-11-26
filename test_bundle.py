@@ -15,7 +15,7 @@ def parse_modules(filename):
         end = False
         for line in construct.readlines():
             if start:
-                m = re.search('^  - ([\w\-]+)', line)
+                m = re.search(r'^  - ([\w\-]+)', line)
                 if m is not None:
                     modules.append(m.group(1))
                 else:
