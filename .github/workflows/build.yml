@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ['1.25']
+        version: ['1.26']
     steps:
       - uses: actions/checkout@v4
       - name: Build
@@ -22,7 +22,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        version: ['1.25']
+        version: ['1.26']
     steps:
       - uses: actions/checkout@v4
       - name: Build
@@ -31,13 +31,13 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: otconda-${{ matrix.version }}-MacOSX-x86_64.sh
+          files: otconda-${{ matrix.version }}-MacOSX-arm64.sh
 
   windows:
     runs-on: windows-latest
     strategy:
       matrix:
-        version: ['1.25']
+        version: ['1.26']
     steps:
       - uses: actions/checkout@v4
       - uses: conda-incubator/setup-miniconda@v3

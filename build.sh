@@ -16,11 +16,12 @@ then
 else
   OS=MacOSX
 fi
+ARCH=`uname -m`
 
 # install constructor
-wget -c --no-check-certificate https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-${OS}-x86_64.sh -P /tmp
+wget -c --no-check-certificate https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-${OS}-${ARCH}.sh -P /tmp
 rm -rf /tmp/miniforge
-bash /tmp/Miniforge3-${OS}-x86_64.sh -b -p /tmp/miniforge
+bash /tmp/Miniforge3-${OS}-${ARCH}.sh -b -p /tmp/miniforge
 export PATH="/tmp/miniforge/bin:$PATH"
 conda install -y constructor
 
