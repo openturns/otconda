@@ -1,5 +1,5 @@
 name: otconda
-version: '1.26'
+version: '1.27'
 
 channels:
   - conda-forge
@@ -9,13 +9,12 @@ ignore_duplicate_files: true
 specs:
   - python 3.12.*
   - conda
-  - miniforge_console_shortcut  [win]
   - scikit-learn
   - pandas
   - seaborn
   - ipython
   - jupyter
-  - openturns 1.26*
+  - openturns 1.27.*
   - otagrum
   - otfftw
   - otfmi
@@ -25,6 +24,7 @@ specs:
   - otrobopt
   - otsvm
   - otwrapy
+  - miniforge_console_shortcut  [win]
 
 license_file: EULA.txt
 welcome_image: galton_v.png
