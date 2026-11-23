@@ -15,8 +15,9 @@ specs:
   - ipython
   - jupyter
   - openturns 1.28.*
-    #- otagrum
-    #- otfftw
+  - otagrum  [unix]
+  - otmeshing  [unix]
+  - otfftw  [unix]
   - otfmi
   - otmixmod
   - otmorris
