@@ -17,7 +17,7 @@ specs:
   - openturns 1.28.*
   - otagrum  [unix]
   - otmeshing  [unix]
-  - otfftw  [unix]
+  - otfftw
   - otfmi
   - otmixmod
   - otmorris
